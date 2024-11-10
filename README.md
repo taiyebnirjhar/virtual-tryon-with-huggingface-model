@@ -1,4 +1,3 @@
-
 # Virtual Try-On API Integration Guide
 
 ## Overview
