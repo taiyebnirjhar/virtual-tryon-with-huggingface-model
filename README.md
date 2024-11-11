@@ -27,7 +27,7 @@ GRADIO_API_URL=Nymbo/Virtual-Try-On
 ```javascript
 const express = require('express');
 const multer = require('multer');
-const { client } = require('@gradio/client');
+const { Client } = require('@gradio/client');
 
 const app = express();
 const upload = multer({
@@ -47,7 +47,7 @@ const uploadFields = upload.fields([
 ```javascript
 app.post('/api/virtual-tryon', uploadFields, async (req, res) => {
   try {
-    const gradioApp = await client("Nymbo/Virtual-Try-On");
+    const gradioApp = await Client.connect("Nymbo/Virtual-Try-On");
     
     // Convert uploaded files to appropriate format
     const humanImage = new Blob([req.files['human'][0].buffer], { 
